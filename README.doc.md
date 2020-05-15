@@ -114,6 +114,10 @@ module.exports = {
 ```
 
 ### 项目改造
+先预安装数据图表插件
+```
+yarn add viser-vue
+```
 
 ##### 1. 修改 src/App.vue
 
