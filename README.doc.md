@@ -1,46 +1,65 @@
 # antd-demo
-Vue结合Ant Design Vue的示例工程
+
+Vue 结合 Ant Design Vue 的示例工程
 
 ### 前置工具
-##### 1. [安装Node.js](http://jianshu.com)
-##### 2. 全局安装yarn依赖管理工具
+
+##### 1. [安装 Node](http://jianshu.com)
+
+##### 2. 全局安装 yarn 依赖管理工具
+
 ```
 npm install -g yarn
 ```
 
 ### 创建步骤
+
 #### 1. 安装脚手架工具
+
 ```
 npm install -g @vue/cli
 ```
+
 #### 2. 创建项目
+
 ```
 vue create antd-demo
 ```
-##### step1：按上下键选择Manually select features
+
+##### step1：按上下键选择 Manually select features
+
 ![](./doc/vue_cli1.png)
 
 ##### step2：按上下键选择要安装的功能，按空格键确定，选择完成之后回车进行下一步
+
 ![](./doc/vue_cli2.png)
 
 ##### step3：同理完成接下来的配置
+
 ![](./doc/vue_cli3.png)
 
 ##### step4：运行项目成功后，在浏览器输入地址即可预览
+
 http://localhost:8080/
 
 ![](./doc/vue_cli4.png)
 
-### 引入antd
-##### 安装ant-design-vue
+### 引入 antd
+
+##### 安装 ant-design-vue
+
 ```
 yarn add ant-design-vue
 ```
-##### 安装babel-plugin-import
+
+##### 安装 babel-plugin-import
+
 ```
 yarn add babel-plugin-import --dev
 ```
-##### 修改babel.config.js
+
+##### 修改 babel.config.js
+
 ```
 module.exports = {
   presets: ["@vue/cli-plugin-babel/preset"],
@@ -52,7 +71,9 @@ module.exports = {
   ]
 };
 ```
-##### main.js文件引入antd-vue,引入后如下
+
+##### main.js 文件引入 antd-vue,引入后如下
+
 ```
 import Vue from "vue";
 import App from "./App.vue";
@@ -70,13 +91,16 @@ new Vue({
 }).$mount("#app");
 ```
 
-##### 运行项目，可能出现less问题，解决方案见下方，然后重新运行项目
+##### 运行项目，可能出现 less 问题，解决方案见下方，然后重新运行项目
+
 ```
 yarn serve
 ```
+
 ![](./doc/vue_cli4.png)
 
-> 解决办法配置vue.config.js
+> 解决办法根目录下新建 vue.config.js
+
 ```
 module.exports = {
   css: {
@@ -90,7 +114,9 @@ module.exports = {
 ```
 
 ### 项目改造
-##### 1. 修改src/App.vue
+
+##### 1. 修改 src/App.vue
+
 ```
 <template>
   <div id="app">
@@ -109,7 +135,8 @@ module.exports = {
 </style>
 ```
 
-##### 2. 修改src/main.js
+##### 2. 修改 src/main.js
+
 ```
 import Vue from "vue";
 import App from "./App.vue";
@@ -166,7 +193,8 @@ new Vue({
 }).$mount("#app");
 ```
 
-##### 3. 新建src/layouts目录，并在目录下新建BasicLayout.vue文件
+##### 3. 新建 src/layouts 目录，并在目录下新建 BasicLayout.vue 文件
+
 ```
 <template>
   <a-layout id="components-layout-demo-side" style="min-height: 100vh">
@@ -266,7 +294,8 @@ export default {
 </style>
 ```
 
-##### 4. 将原先的路由文件router/index.js修改如下
+##### 4. 将原先的路由文件 router/index.js 修改如下
+
 ```
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -347,7 +376,8 @@ const router = new VueRouter({
 export default router;
 ```
 
-##### 5. 然后在views目录下新建路由中对应的子目录和页面
+##### 5. 然后在 views 目录下新建路由中对应的子目录和页面
+
 ```
 views
     ├── dashboard
@@ -358,12 +388,83 @@ views
         └── BaseList.vue
 ```
 
-##### 6. ```yarn serve``` 预览效果
+##### 6. `yarn serve` 预览效果
+
 ![](./doc/antd_demo.png)
 
+### 官方管理后台模版
+
+[ant-design-pro](https://github.com/ant-design/ant-design-pro)
+
+##### 项目下载和运行
+
+- 拉取项目代码
+
+```bash
+git clone https://github.com/sendya/ant-design-pro-vue.git
+cd ant-design-pro-vue
+```
+
+- 安装依赖
+
+```
+yarn install
+```
+
+- 开发模式运行
+
+```
+yarn run serve
+```
+
+- 编译项目
+
+```
+yarn run build
+```
+
+- Lints and fixes files
+
+```
+yarn run lint
+```
+
+### VSCode 配置
+
+[插件安装推荐博文](https://liubing.me/vscode-vue-setting.html)
+
+##### 仅供参考的settings.json
+
+```
+"minapp-vscode.disableAutoConfig": true,
+
+// editor配置
+"editor.tabCompletion": "onlySnippets",
+"editor.renderWhitespace": "all",
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.tabSize": 2,
+"editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+},
+// eslint配置
+"eslint.enable": false,
+"eslint.alwaysShowStatus": true,
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  "html",
+  "vue"
+],
+// prettier配置
+"prettier.arrowParens": "avoid",
+"prettier.trailingComma": "none"
+```
+
 ### 附录
-See [vue-cli](https://cli.vuejs.org/)
-See [vue router](https://router.vuejs.org/)
-See [vuex](https://vuex.vuejs.org/)
-See [vue-devtools](https://github.com/vuejs/vue-devtools#vue-devtools)
-See [awesome-vue](https://github.com/vuejs/awesome-vue)
+
+- See [vue-cli](https://cli.vuejs.org/)
+- See [vue router](https://router.vuejs.org/)
+- See [vuex](https://vuex.vuejs.org/)
+- See [vue-devtools](https://github.com/vuejs/vue-devtools#vue-devtools)
+- See [awesome-vue](https://github.com/vuejs/awesome-vue)
