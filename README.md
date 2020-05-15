@@ -1,4 +1,7 @@
 # antd-demo
+Vue结合Ant Design Vue的示例工程
+
+[文档说明](./README.doc.md)
 
 ## Project setup
 ```
