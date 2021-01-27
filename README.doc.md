@@ -4,7 +4,7 @@ Vue 结合 Ant Design Vue 的示例工程
 
 ### 前置工具
 
-##### 1. [安装 Node](http://jianshu.com)
+##### 1. [安装 Node](https://nodejs.org/zh-cn/)
 
 ##### 2. 全局安装 yarn 依赖管理工具
 
@@ -97,7 +97,7 @@ new Vue({
 yarn serve
 ```
 
-![](./doc/vue_cli4.png)
+![](./doc/vue_cli5.png)
 
 > 解决办法根目录下新建 vue.config.js
 
