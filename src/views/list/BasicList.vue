@@ -12,12 +12,7 @@
       >
         <a-list-item :key="index" v-for="(item, index) in data">
           <a-list-item-meta :description="item.description">
-            <a-avatar
-              slot="avatar"
-              size="large"
-              shape="square"
-              :src="item.avatar"
-            />
+            <a-avatar slot="avatar" size="large" shape="square" :src="item.avatar" />
             <a slot="title">{{ item.title }}</a>
           </a-list-item-meta>
           <div slot="actions">
@@ -26,7 +21,10 @@
                 <a-menu-item><a>编辑</a></a-menu-item>
                 <a-menu-item><a>删除</a></a-menu-item>
               </a-menu>
-              <a>更多<a-icon type="down"/></a>
+              <a>
+                更多
+                <a-icon type="down" />
+              </a>
             </a-dropdown>
           </div>
           <div class="list-content">

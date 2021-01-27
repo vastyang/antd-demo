@@ -6,8 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: () =>
-      import(/* webpackChunkName: "layout" */ "../layouts/BasicLayout"),
+    component: () => import(/* webpackChunkName: "layout" */ "../layouts/BasicLayout"),
     children: [
       // dashboard
       {
@@ -25,10 +24,7 @@ const routes = [
             path: "analysis",
             name: "Analysis",
             meta: { title: "分析页" },
-            component: () =>
-              import(
-                /* webpackChunkName: "dashboard" */ "../views/dashboard/Analysis"
-              )
+            component: () => import(/* webpackChunkName: "dashboard" */ "../views/dashboard/Analysis")
           }
         ]
       },

@@ -5,13 +5,7 @@
         <img class="logo-img" src="@/assets/logo.png" />
       </div>
       <!-- 左侧菜单 -->
-      <a-menu
-        theme="dark"
-        :default-selected-keys="['1']"
-        :selected-keys="[current]"
-        mode="inline"
-        @click="menuClick"
-      >
+      <a-menu theme="dark" :default-selected-keys="['1']" :selected-keys="[current]" mode="inline" @click="menuClick">
         <a-menu-item key="1">
           <a-icon type="pie-chart" />
           <span>仪表盘</span>
@@ -41,7 +35,9 @@
 
       <!-- 右侧footer -->
       <a-layout-footer style="text-align: center">
-        云五岳 Copyright<a-icon type="copyright" /> 2020
+        云五岳 Copyright
+        <a-icon type="copyright" />
+        2020
         <span>五岳科技出品</span>
       </a-layout-footer>
     </a-layout>
